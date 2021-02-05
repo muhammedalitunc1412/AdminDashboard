@@ -1,0 +1,12 @@
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\bin\Debug\net5.0\AdminDashboard.Shared.deps.json
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\bin\Debug\net5.0\AdminDashboard.Shared.dll
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\bin\Debug\net5.0\ref\AdminDashboard.Shared.dll
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\bin\Debug\net5.0\AdminDashboard.Shared.pdb
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\obj\Debug\net5.0\AdminDashboard.Shared.csprojAssemblyReference.cache
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\obj\Debug\net5.0\AdminDashboard.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\obj\Debug\net5.0\AdminDashboard.Shared.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\obj\Debug\net5.0\AdminDashboard.Shared.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\obj\Debug\net5.0\AdminDashboard.Shared.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\obj\Debug\net5.0\AdminDashboard.Shared.dll
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\obj\Debug\net5.0\ref\AdminDashboard.Shared.dll
+C:\Users\ASUS\Desktop\tel\AdminDashboard\AdminDashboard.Shared\obj\Debug\net5.0\AdminDashboard.Shared.pdb

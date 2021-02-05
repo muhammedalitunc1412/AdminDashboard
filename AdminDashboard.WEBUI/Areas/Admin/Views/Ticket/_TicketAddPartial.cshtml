@@ -1,0 +1,84 @@
+﻿@model AdminDashboard.Entities.Dtos.TicketAddDto
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><span class="fas fa-plus"></span> Bilet Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="İptal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Add" id="form-ticket-add">
+                    <input name="IsValid" type="hidden" value="@ViewData.ModelState.IsValid.ToString()" />
+                    <div asp-validation-summary="All" class="text-danger" id="validation-summary" aria-hidden="true" style="display: none;"></div>
+
+                    <div class="form-group">
+                        <label asp-for="CustomerName"></label>
+                        <input class="form-control" asp-for="CustomerName" />
+                        <span class="text-danger" asp-validation-for="CustomerName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TicketDetails"></label>
+                        <input class="form-control" asp-for="TicketDetails" />
+                        <span class="text-danger" asp-validation-for="TicketDetails"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="PictureFile"></label>
+                        <input type="file" accept="image/*" class="form-control-file" asp-for="PictureFile" />
+                        <span class="text-danger" asp-validation-for="PictureFile"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CreatedDate"></label>
+                        <input type="datetime-local" class="form-control" asp-for="CreatedDate" />
+                        <span class="text-danger" asp-validation-for="CreatedDate"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="Priority"></label>
+                        <br />
+                        <select name="Priority" id="Priority">
+                            <option value="1">High</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Low</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-block" data-dismiss="modal"><span class="fas fa-times"></span> İptal</button>
+                <button type="button" class="btn btn-primary btn-block" id="btnSave"><span class="fas fa-save"></span> Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*Veritabanının arkasına geçebilmek için yazdığım kod*@
+
+<script>
+    $('#btnSave').on('click', function () {
+
+        swal({
+            text: "Veriler Güncelleniyor Tabloya Yönlendiriliyorsunuz...",
+            icon: "info",
+        });
+         });</script>
+
+<script>
+    document.getElementById("btnSave").addEventListener("click", rld);
+
+    function rld() {
+        setTimeout(() => {
+            location.reload();
+        }, 1200);
+
+    }</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

@@ -1,0 +1,31 @@
+﻿tr {
+    transition: all 0.3s ease;
+}
+tr:hover {
+    background-color: #F0F1F8;
+}
+
+thead tr {
+    font-weight: 300;
+    color: #9FA2B4
+}
+.priority-tag {
+    color: white;
+    border: 0;
+    border-radius: 60px;
+}
+
+.user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.btn-trash {
+    color: #FF6760 !important;
+}
+
+.dataTables_info {
+    display: none;
+}

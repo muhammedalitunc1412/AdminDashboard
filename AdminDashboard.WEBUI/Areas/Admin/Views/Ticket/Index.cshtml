@@ -1,0 +1,85 @@
+﻿@using AdminDashboard.Shared.Utilities.Results.ComplexTypes
+@model AdminDashboard.Entities.Dtos.TicketListDto
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Biletler Index";
+}
+<link href="~/css/custom.css" rel="stylesheet" />
+
+@if (Model.ResultStatus == ResultStatus.Success)
+{
+    <div id="modalPlaceHolder" aria-hidden="true"></div>
+    <div class="card mb-4 mt-2">
+        <div class="card-header">
+            <i class="fas fa-table mr-1"></i>
+            Biletler
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table" id="ticketsTable" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>TicketDetails</th>
+                            <th>CustomerName</th>
+                            <th>Priority</th>
+                            <th>CreatedDate</th>
+                            <th>İşlemler</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                            @foreach (var ticket in Model.Tickets)
+                            {
+                        <tr name="@ticket.Id">
+                            <td>
+                                <img class="user-img"
+                                     src="~/img/@ticket.CustomerPicture"
+                                     alt="@ticket.CustomerName" />
+                                @ticket.TicketDetails
+                            </td>
+                            <td>
+                                <button class="btn btn-update" data-id="@ticket.Id">
+                                    @ticket.CustomerName
+                                </button>
+                            </td>
+                            <td width="5%">
+                                @if (ticket.Priority == 1)
+                                {
+                                    <button class="btn-sm priority-tag" style="background-color: #F12B2C;">HIGH</button>
+                                }
+                                @if (ticket.Priority == 2)
+                                {
+                                    <button class="btn-sm priority-tag" style="background-color: #FEC400;">NORMAL</button>
+                                }
+                                @if (ticket.Priority == 3)
+                                {
+                                    <button class="btn-sm priority-tag" style="background-color: #29CC97;">LOW</button>
+                                }
+                            </td>
+                            <td width="13%">@ticket.CreatedDate</td>
+                            <td width="5%">
+                                @if (ticket.Priority == 3)
+                                {
+                                    <button class="btn btn-delete btn-trash" data-id="@ticket.Id"><span class="fas fa-trash"></span></button>
+                                }
+                            </td>
+                        </tr>
+                        }
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+@if (Model.ResultStatus == ResultStatus.Error)
+{
+    <div class="alert alert-danger mt-3">
+        @Model.Message <br />
+        Dashboard sayfasına geri dönmek için lütfen <a class="alert-link" asp-area="Admin" asp-controller="Home" asp-action="Index">tıklayınız.</a>
+    </div>
+}
+@section Scripts
+{
+    <script src="~/js/ticketIndex.js" type="application/ecmascript"></script>
+}

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdminDashboard.Data\AdminDashboard.Data.csproj" />
+    <ProjectReference Include="..\AdminDashboard.Entities\AdminDashboard.Entities.csproj" />
+    <ProjectReference Include="..\AdminDashboard.Shared\AdminDashboard.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

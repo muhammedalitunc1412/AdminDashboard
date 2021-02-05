@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewBag.Title - Admin Paneli | AdminDashboard</title>
+    @await Html.PartialAsync("_LayoutCssPartial")
+</head>
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin Paneli</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Arama..." aria-label="Search" aria-describedby="basic-addon2" />
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+        <!-- Navbar-->
+        @await Component.InvokeAsync("UserMenu")
+
+    </nav>
+    <div id="layoutSidenav">
+        @await Component.InvokeAsync("AdminMenu")
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+        <div class="alert alert-success mt-2" role="alert">
+            @TempData["SuccessMessage"]
+        </div>}
+                    @RenderBody()
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Tüm Hakları Saklıdır &copy; AdminDashboard 2021</div>
+                        <div>
+                            <a href="#">Gizlilik Politikası</a>
+                            &middot;
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    @await Html.PartialAsync("_LayoutJsPartial")
+    @await RenderSectionAsync("Scripts", false);
+</body>
+</html>

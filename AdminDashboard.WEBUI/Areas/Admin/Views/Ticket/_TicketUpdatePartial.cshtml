@@ -1,0 +1,67 @@
+﻿@model AdminDashboard.Entities.Dtos.TicketUpdateDto
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><span class="fas fa-edit"></span> @Model.CustomerName Adlı Kullanıcının bilet bilgileri Düzenleniyor...</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="İptal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="Update" id="form-ticket-update">
+                    <input name="IsValid" type="hidden" value="@ViewData.ModelState.IsValid.ToString()" />
+                    <div asp-validation-summary="All" class="text-danger" id="validation-summary" aria-hidden="true" style="display: none;"></div>
+                    <input hidden="true" asp-for="Id" />
+                    <div class="form-group">
+                        <label asp-for="CustomerName"></label>
+                        <input class="form-control" asp-for="CustomerName" />
+                        <span class="text-danger" asp-validation-for="CustomerName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TicketDetails"></label>
+                        <input class="form-control" asp-for="TicketDetails" />
+                        <span class="text-danger" asp-validation-for="TicketDetails"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CustomerPicture"></label>
+                        <input class="form-control" asp-for="CustomerPicture" />
+                        <span class="text-danger" asp-validation-for="CustomerPicture"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CreatedDate"></label>
+                        <input type="datetime-local" class="form-control" asp-for="CreatedDate" />
+                        <span class="text-danger" asp-validation-for="CreatedDate"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="Priority"></label>
+                        <br/>
+                        <select name="Priority" id="Priority">
+                            <option value="1">High</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Low</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-block" data-dismiss="modal"><span class="fas fa-times"></span> İptal</button>
+                <button type="button" class="btn btn-primary btn-block" id="btnUpdate"><span class="fas fa-save"></span> Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("btnUpdate").addEventListener("click", rld);
+
+    function rld() {
+        setTimeout(() => {
+            location.reload();
+        }, 500);
+
+    }</script>
